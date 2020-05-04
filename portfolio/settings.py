@@ -135,3 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  #name of media directory where ima
 
 MEDIA_URL = '/medias/'  # name of the path
 
+try:
+    from local_settings import *
+except ImportError:
+    pass
