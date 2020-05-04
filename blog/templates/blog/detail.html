@@ -8,23 +8,14 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Website</title>
+    <title>{{blo.title}}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
-<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#563d7c">
-
+    
 
     <style>
       .bd-placeholder-img {
@@ -61,7 +52,7 @@
               <a class="nav-link" href="{%static 'resume.pdf' %}">Resume</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{%url 'allblogs'%}">Blog</a>
+              <a class="nav-link active" href="#">Blog</a>
             </li>
             
           </ul>
@@ -71,38 +62,25 @@
 
 <main role="main">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1>Website</h1>
-      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-      <p>
-        <a href="mailto:a@x.com" class="btn btn-primary my-2">Email Me!</a>
-        
-      </p>
-      <img src="{%static 'photo.jpg' %}" height="300" width="200"/>
-    </div>
-  </section>
-
   <div class="album py-5 bg-light">
     <div class="container">
-
-      <div class="row">
-        {%for job in jobs.all%}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{job.image.url}}">
-            <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-              
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-          </div>
-        </div>
+      
+          
+        <h3 class="text-center">{{blo.title}}</h3 >
+        
+        <p class="text-center">  {{blo.pub_date}}</p>
+          
+          <img class="img-fluid" src="{{blo.image.url}}" >
+          <br/>
+          <br/>
+          {{blo.body}}
+          
+        
+        
+        
       </div>
     </div>
-  </div>
+  
 
 </main>
 
